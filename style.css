@@ -1,4 +1,4 @@
-/* BASE */
+
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +17,6 @@ body {
   transition: 0.5s ease;
 }
 
-/* 🌼 LIGHT THEME — Warm Brown × Beige */
 :root {
   --bg: radial-gradient(circle at top, #f4ecdf, #e9dfd1, #e2d6c6);
 
@@ -30,11 +29,11 @@ body {
 
   --card-bg: rgba(255, 255, 255, 0.4);
 
-  --control-bg: #7a5f47;      /* Brown */
+  --control-bg: #7a5f47;      
   --glow: rgba(160, 120, 90, 0.4);
 }
 
-/* 🌙 DARK THEME — Chocolate + Coffee */
+
 .dark {
   --bg: linear-gradient(135deg, #241910, #2f2117, #3d2b1f);
 
@@ -45,7 +44,7 @@ body {
 
   --btn-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
 
-  --control-bg: #5a4534;   /* Coffee-brown */
+  --control-bg: #5a4534;  
 
   --glow: rgba(240, 200, 160, 0.35);
 }
@@ -54,7 +53,7 @@ body.dark {
   color: white;
 }
 
-/* TITLE */
+
 .title {
   font-size: 2.6rem;
   margin-top: 60px;
@@ -73,7 +72,7 @@ body.dark {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* THEME TOGGLE */
+
 #theme-toggle {
   position: absolute;
   top: 22px;
@@ -96,7 +95,7 @@ body.dark {
   background: var(--btn-hover);
 }
 
-/* SOUNDBOARD GRID */
+
 .soundboard {
   margin-top: 40px;
   display: grid;
@@ -112,7 +111,7 @@ body.dark {
   to   { opacity: 1; transform: translateY(0);}
 }
 
-/* BUTTONS */
+
 .sound-btn {
   padding: 22px;
   border: none;
@@ -136,7 +135,7 @@ body.dark {
   box-shadow: 0 10px 28px var(--glow);
 }
 
-/* Ripple */
+
 .sound-btn .ripple {
   position: absolute;
   width: 15px;
@@ -155,7 +154,7 @@ body.dark {
   }
 }
 
-/* CONTROLS */
+
 .controls {
   margin-top: 45px;
   display: flex;
@@ -187,16 +186,16 @@ body.dark {
   transform: scale(1.05);
 }
 
-/* MOBILE */
+
 @media (max-width: 480px) {
   .title { font-size: 2rem; margin-top: 40px; }
   .sound-btn { padding: 15px; font-size: 0.95rem; }
   #theme-toggle { padding: 10px; right: 15px; top: 15px; }
 }
-/* Floating soft background particles */
+
 .bg-particle {
     position: fixed;
-    background: rgba(120, 90, 60, 0.25); /* brown beige soft color */
+    background: rgba(120, 90, 60, 0.25); 
     border-radius: 50%;
     pointer-events: none;
     filter: blur(3px);
