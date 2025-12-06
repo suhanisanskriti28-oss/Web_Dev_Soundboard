@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nature Soundboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1 class="title"> Soundboard</h1>
+
+  <div class="soundboard">
+    <button class="sound-btn" data-sound="dog">Dog Bark</button>
+    <button class="sound-btn" data-sound="clap">Clap</button>
+    <button class="sound-btn" data-sound="pop">Pop</button>
+    <button class="sound-btn" data-sound="laugh">Laugh</button>
+    <button class="sound-btn" data-sound="ocean">Ocean Waves</button>
+    <button class="sound-btn" data-sound="birds">Bird Chirping</button>
+  </div>
+
+  <div class="controls">
+    <label>Volume:</label>
+    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1" />
+    <button id="mute-btn">Mute</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+/* BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  user-select: none;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  transition: 0.5s ease;
+}
+
+/* 🌼 LIGHT THEME — Warm Brown × Beige */
+:root {
+  --bg: radial-gradient(circle at top, #f4ecdf, #e9dfd1, #e2d6c6);
+
+  --text-color: #3d2f23;
+
+  --btn-bg: rgba(255, 255, 255, 0.55);
+  --btn-hover: rgba(255, 255, 255, 0.85);
+
+  --btn-shadow: 0 6px 18px rgba(140, 105, 80, 0.15);
+
+  --card-bg: rgba(255, 255, 255, 0.4);
+
+  --control-bg: #7a5f47;      /* Brown */
+  --glow: rgba(160, 120, 90, 0.4);
+}
+
+/* 🌙 DARK THEME — Chocolate + Coffee */
+.dark {
+  --bg: linear-gradient(135deg, #241910, #2f2117, #3d2b1f);
+
+  --text-color: #f2e6d8;
+
+  --btn-bg: rgba(255, 255, 255, 0.1);
+  --btn-hover: rgba(255, 255, 255, 0.22);
+
+  --btn-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+
+  --control-bg: #5a4534;   /* Coffee-brown */
+
+  --glow: rgba(240, 200, 160, 0.35);
+}
+
+body.dark {
+  color: white;
+}
+
+/* TITLE */
+.title {
+  font-size: 2.6rem;
+  margin-top: 60px;
+  letter-spacing: 1px;
+  font-weight: 700;
+
+  background: linear-gradient(135deg, #7b5035, #b08968);
+  -webkit-background-clip: text;
+  color: transparent;
+
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* THEME TOGGLE */
+#theme-toggle {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+
+  background: var(--btn-bg);
+  border: none;
+  padding: 12px 16px;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  cursor: pointer;
+
+  backdrop-filter: blur(8px);
+  box-shadow: var(--btn-shadow);
+  transition: 0.3s;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.15);
+  background: var(--btn-hover);
+}
+
+/* SOUNDBOARD GRID */
+.soundboard {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 22px;
+  width: 100%;
+  max-width: 900px;
+  animation: slideUp 0.9s ease forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+
+/* BUTTONS */
+.sound-btn {
+  padding: 22px;
+  border: none;
+  font-size: 1.05rem;
+  border-radius: 18px;
+
+  background: var(--btn-bg);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  position: relative;
+
+  color: var(--text-color);
+  overflow: hidden;
+  transition: 0.25s ease;
+  box-shadow: var(--btn-shadow);
+}
+
+.sound-btn:hover {
+  background: var(--btn-hover);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px var(--glow);
+}
+
+/* Ripple */
+.sound-btn .ripple {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.55s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(15);
+    opacity: 0;
+  }
+}
+
+/* CONTROLS */
+.controls {
+  margin-top: 45px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#volume-slider {
+  width: 160px;
+  accent-color: #b08968;
+}
+
+#mute-btn {
+  padding: 8px 18px;
+  background: var(--control-bg);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+
+  transition: 0.25s ease;
+}
+
+#mute-btn:hover {
+  opacity: 0.75;
+  transform: scale(1.05);
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .title { font-size: 2rem; margin-top: 40px; }
+  .sound-btn { padding: 15px; font-size: 0.95rem; }
+  #theme-toggle { padding: 10px; right: 15px; top: 15px; }
+}
+/* Floating soft background particles */
+.bg-particle {
+    position: fixed;
+    background: rgba(120, 90, 60, 0.25); /* brown beige soft color */
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(3px);
+    z-index: -1;
+    animation: floatUp ease-in-out infinite;
+}
+
+@keyframes floatUp {
+    0%   { transform: translateY(0) scale(1); opacity: 0.8; }
+    50%  { opacity: 0.45; }
+    100% { transform: translateY(-120vh) scale(1.4); opacity: 0; }
+}
